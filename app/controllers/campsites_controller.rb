@@ -4,4 +4,9 @@ class CampsitesController < ApplicationController
     @title = "All Campsites:"
     @campsites = Campsite.all
   end
+
+  def show
+    @campsite = Campsite.find(params[:id])
+    @campers = @campsite.campers
+  end
 end
